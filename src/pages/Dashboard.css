@@ -1,0 +1,22 @@
+.container-dashboard {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #f8fafc;
+}
+
+.container-dashboard > div:last-child {
+  flex: 1;
+  min-width: 0;
+  padding: 24px;
+  overflow: auto;
+}
+
+/* ✅ NUEVO: en móvil el sidebar está fuera del flujo (fixed),
+   así que el contenido ocupa todo el ancho con padding para el hamburger */
+@media (max-width: 768px) {
+  .container-dashboard > div:last-child {
+    padding: 24px 16px 24px 16px;
+    padding-top: 68px; /* espacio para el botón hamburguesa */
+  }
+}
