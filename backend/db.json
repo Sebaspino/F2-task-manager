@@ -1,0 +1,25 @@
+{
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Preparar presentación cliente",
+      "descripcion": "Preparar slides para la reunión del viernes con el cliente TechCorp",
+      "fechaVencimiento": "2026-06-06",
+      "estado": "Pendiente"
+    },
+    {
+      "id": 2,
+      "titulo": "Code review módulo auth",
+      "descripcion": "Revisar implementación de login y registro",
+      "fechaVencimiento": "2026-05-28",
+      "estado": "En Progreso"
+    },
+    {
+      "id": 3,
+      "titulo": "Enviar reporte mensual",
+      "descripcion": "Reporte de métricas de mayo",
+      "fechaVencimiento": "2026-05-30",
+      "estado": "Completada"
+    }
+  ]
+}
