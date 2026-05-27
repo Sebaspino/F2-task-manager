@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { end_points } from '../services/api'
-import { redirect } from '../helpers/alerts'
 import Swal from 'sweetalert2'
 
 const STATUSES = ['Pendiente', 'En Progreso', 'Completada']
 
-// ✅ Helper: formatear fecha ISO → legible
 function formatDate(iso) {
   if (!iso) return '—'
   const [y, m, d] = iso.split('-')
@@ -16,14 +14,13 @@ function formatDate(iso) {
 
 function TaskEdit() {
   const { id } = useParams()
+  const navigate = useNavigate()
   const [titulo, setTitulo] = useState('')
   const [descripcion, setDescripcion] = useState('')
   const [fechaVencimiento, setFechaVencimiento] = useState('')
   const [estado, setEstado] = useState('Pendiente')
-  // ✅ FIX: estado de carga para fetch inicial y para el PUT
   const [loadingData, setLoadingData] = useState(true)
   const [isLoading, setIsLoading] = useState(false)
-  // ✅ FIX: estado de error de título
   const [titleError, setTitleError] = useState('')
 
   useEffect(() => {
@@ -43,7 +40,6 @@ function TaskEdit() {
   }, [id])
 
   function updateTask() {
-    // ✅ FIX: validar título antes de enviar
     if (!titulo.trim()) {
       setTitleError('El título no puede estar vacío')
       return
@@ -57,8 +53,19 @@ function TaskEdit() {
       body: JSON.stringify({ titulo, descripcion, fechaVencimiento, estado }),
     })
       .then((res) => res.json())
-      .then(() => redirect('Tarea actualizada', '/dashboard', 'success'))
-      // ✅ FIX: manejo de error de red
+      .then(() => {
+        // Navegar primero, luego mostrar toast
+        navigate('/dashboard')
+        Swal.fire({
+          title: 'Tarea actualizada',
+          icon: 'success',
+          timer: 1500,
+          showConfirmButton: false,
+          timerProgressBar: true,
+          toast: true,
+          position: 'top-end',
+        })
+      })
       .catch(() => {
         setIsLoading(false)
         Swal.fire({
@@ -69,7 +76,6 @@ function TaskEdit() {
       })
   }
 
-  // Skeleton mientras carga los datos
   if (loadingData) {
     return (
       <div className="rounded-xl border border-slate-200 bg-white shadow-sm p-6 space-y-3">
@@ -101,7 +107,6 @@ function TaskEdit() {
           >
             Cancelar
           </Link>
-          {/* ✅ FIX: deshabilitado mientras carga */}
           <button
             onClick={updateTask}
             type="button"
@@ -127,7 +132,6 @@ function TaskEdit() {
           </div>
 
           <div className="lg:col-span-9">
-            {/* ✅ FIX: label + error de validación */}
             <label className="text-xs font-semibold text-slate-600">Título *</label>
             <input
               value={titulo}
@@ -164,7 +168,6 @@ function TaskEdit() {
           </div>
 
           <div className="lg:col-span-3">
-            {/* ✅ PLUS: mostrar fecha formateada como referencia */}
             <label className="text-xs font-semibold text-slate-600">
               Fecha de vencimiento
               {fechaVencimiento && (
