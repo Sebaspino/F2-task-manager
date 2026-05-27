@@ -1,19 +1,74 @@
 {
   "tareas": [
     {
-      "id": "2",
+      "id": 1,
+      "titulo": "Preparar presentación cliente",
+      "descripcion": "Preparar slides para la reunión del viernes con el cliente TechCorp",
+      "fechaVencimiento": "2026-06-06",
+      "estado": "Pendiente"
+    },
+    {
+      "id": 2,
       "titulo": "Code review módulo auth",
       "descripcion": "Revisar implementación de login y registro",
       "fechaVencimiento": "2026-05-28",
       "estado": "En Progreso"
     },
     {
+      "id": 3,
       "titulo": "Enviar reporte mensual",
-      "descripcion": "Reporte de métricas de febrero",
+      "descripcion": "Reporte de métricas de mayo",
       "fechaVencimiento": "2026-05-30",
-      "estado": "En Progreso",
-      "id": "3"
+      "estado": "Completada"
+    },
+    {
+      "id": 4,
+      "titulo": "Actualizar documentación API",
+      "descripcion": "Documentar los nuevos endpoints del módulo de usuarios",
+      "fechaVencimiento": "2026-06-10",
+      "estado": "Pendiente"
+    },
+    {
+      "id": 5,
+      "titulo": "Reunión de planificación sprint",
+      "descripcion": "Definir tareas y prioridades para el siguiente sprint",
+      "fechaVencimiento": "2026-06-02",
+      "estado": "Pendiente"
+    },
+    {
+      "id": 6,
+      "titulo": "Corregir bug en formulario de registro",
+      "descripcion": "El campo de teléfono no valida correctamente el formato",
+      "fechaVencimiento": "2026-05-29",
+      "estado": "En Progreso"
+    },
+    {
+      "id": 7,
+      "titulo": "Diseñar pantalla de perfil de usuario",
+      "descripcion": "Crear mockups en Figma para la nueva vista de perfil",
+      "fechaVencimiento": "2026-06-08",
+      "estado": "Pendiente"
+    },
+    {
+      "id": 8,
+      "titulo": "Migrar base de datos a PostgreSQL",
+      "descripcion": "Pasar los datos actuales de JSON a una base de datos relacional",
+      "fechaVencimiento": "2026-06-15",
+      "estado": "Pendiente"
+    },
+    {
+      "id": 9,
+      "titulo": "Pruebas de rendimiento",
+      "descripcion": "Ejecutar pruebas de carga en el servidor de producción",
+      "fechaVencimiento": "2026-06-12",
+      "estado": "En Progreso"
+    },
+    {
+      "id": 10,
+      "titulo": "Capacitación nuevo integrante",
+      "descripcion": "Onboarding técnico para el desarrollador que se une al equipo",
+      "fechaVencimiento": "2026-06-03",
+      "estado": "Completada"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

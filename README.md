@@ -8,8 +8,8 @@ Aplicación web SPA para la gestión de tareas de equipo. Permite crear, editar,
 
 | Servicio | URL |
 |----------|-----|
-| Frontend | `https://<tu-proyecto-frontend>.up.railway.app` |
-| API (JSON Server) | `https://<tu-proyecto-api>.up.railway.app` |
+| Frontend | https://f2-task-manager-production-3adb.up.railway.app |
+| API (JSON Server) | https://f2-task-manager-production-0c3e.up.railway.app |
 
 > Reemplaza las URLs con las generadas por Railway tras el despliegue.
 
@@ -157,7 +157,7 @@ El proyecto se despliega en dos servicios independientes dentro del mismo reposi
    ```
 4. Haz clic en **Deploy**. Railway generará una URL pública, por ejemplo:
    ```
-   https://task-manager-api-production.up.railway.app
+   https://f2-task-manager-production-0c3e.up.railway.app
    ```
 5. Copia esa URL, la necesitarás para el frontend.
 
@@ -176,12 +176,12 @@ El proyecto se despliega en dos servicios independientes dentro del mismo reposi
    ```
 3. En **Variables**, agrega la URL del backend que copiaste en el paso anterior:
    ```
-   VITE_API_URL=https://task-manager-api-production.up.railway.app
+   VITE_API_URL=https://f2-task-manager-production-0c3e.up.railway.app
    ```
    > **Importante:** La variable debe comenzar con `VITE_` para que Vite la inyecte correctamente en tiempo de build.
 4. Haz clic en **Deploy**. Railway generará la URL pública del frontend, por ejemplo:
    ```
-   https://task-manager-frontend-production.up.railway.app
+   https://f2-task-manager-production-3adb.up.railway.app
    ```
 
 ---
@@ -206,9 +206,3 @@ El proyecto se despliega en dos servicios independientes dentro del mismo reposi
 |----------|-------------|-------------------|
 | `VITE_API_URL` | URL base de la API REST | `http://localhost:3001` |
 | `PORT` | Puerto del servidor (usado por Railway) | `3001` (backend) |
-
----
-
-## 📄 Licencia
-
-MIT - la licencia MIT, licencia open source más común. Básicamente que cualquiera puede usar, copiar, modificar y distribuir el código libremente.
