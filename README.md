@@ -157,7 +157,7 @@ El proyecto se despliega en dos servicios independientes dentro del mismo reposi
    ```
 4. Haz clic en **Deploy**. Railway generará una URL pública, por ejemplo:
    ```
-   https://f2-task-manager-production-0c3e.up.railway.app
+   f2-task-manager-production-0142.up.railway.app
    ```
 5. Copia esa URL, la necesitarás para el frontend.
 
