@@ -11,7 +11,7 @@ export default defineConfig({
   ],
   preview: {
     host: '0.0.0.0',
-    port: process.env.PORT ? parseInt(process.env.PORT) : 4173,
+    port: parseInt(process.env.PORT) || 4173,
     allowedHosts: ['f2-task-manager-production-3adb.up.railway.app'],
   },
 })
