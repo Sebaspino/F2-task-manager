@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "server": "json-server --watch backend/db.json --port 3001",
+    "server": "json-server --watch backend/db.json --port ${PORT:-3001}",
     "dev:full": "npx concurrently \"npm run server\" \"npm run dev\"",
     "lint": "eslint .",
     "preview": "vite preview"
